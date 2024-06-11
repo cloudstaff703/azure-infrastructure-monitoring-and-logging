@@ -1,0 +1,6 @@
+ansible
+ansible-lint
+jinja2
+paramiko
+requests
+boto3

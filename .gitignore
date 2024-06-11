@@ -1,0 +1,9 @@
+#virtual env
+venv/
+#Terraform files
+*.tfstate
+*.tfstate.backup
+terraform/.terraform/
+terraform/.terraform.lock.hcl
+*.lock.hcl
+*.tfplan
