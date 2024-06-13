@@ -1,0 +1,23 @@
+- name: Install Docker
+  apt:
+    name: docker.io
+    state: present
+  become: true
+
+- name: Start Docker service
+  service:
+    name: docker
+    state: started
+    enabled: true
+  become: true
+
+- name: Deploy monitoring agent container
+  docker_container:
+    name: monitoring-agent
+    image: your-monitoring-agent-image
+    state: started
+    ports:
+      - "8080:8080"
+    env:
+      LOG_ANALYTICS_WORKSPACE_ID: "{{ log_analytics_workspace_id }}"
+      LOG_ANALYTICS_SHARED_KEY: "{{ log_analytics_shared_key }}"
