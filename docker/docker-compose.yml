@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  monitoring-agent:
+    image: you-monitoring-agent-image
+    container_name: monitoring-agent
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      - LOG_ANALYTICS_WORKSPACE_ID=${LOG_ANALYTICS_WORKSPACE_ID}
+      - LOG_ANALYTICS_SHARED_KEY=${LOG_ANALYTICS_SHARED_KEY}
